@@ -3,7 +3,7 @@ from telegram import Update
 from telegram.ext import Application, CommandHandler, MessageHandler, filters, ContextTypes
 
 # Bot Token එක මෙතනට දාන්න (නැත්නම් Koyeb එකේ Env Variable එකක් විදිහට දෙන්න)
-BOT_TOKEN = "ඔයාගේ_BOT_TOKEN_එක_මෙතනට"
+BOT_TOKEN = "2202407747:AAFw1Vls7wiB_I5zp77vYdV5WMkekXkJOxU"
 
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO)
 
