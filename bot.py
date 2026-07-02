@@ -2,20 +2,18 @@ import logging
 from telegram import Update
 from telegram.ext import Application, CommandHandler, MessageHandler, filters, ContextTypes
 
-# Bot Token එක මෙතනට දාන්න (නැත්නම් Koyeb එකේ Env Variable එකක් විදිහට දෙන්න)
+# Bot Token එක මෙතනට දාන්න
 BOT_TOKEN = "2202407747:AAFw1Vls7wiB_I5zp77vYdV5WMkekXkJOxU"
 
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO)
 
-async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) import Update:
+async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text("ආයුබෝවන්! මට ඕනෑම ෆිල්ම් එකක් හෝ ෆයිල් එකක් එවන්න. මම ඒකට Direct Link එකක් හදලා දෙන්නම්.")
 
 async def handle_document(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    # ෆයිල් එකේ විස්තර ගැනීම
     file_id = update.message.document.file_id
     file_name = update.message.document.file_name
     
-    # ටෙලිග්‍රෑම් සර්වර් එකෙන් direct download ලින්ක් එක සෑදීම
     new_file = await context.bot.get_file(file_id)
     direct_link = new_file.file_path
     
